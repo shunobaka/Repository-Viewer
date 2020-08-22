@@ -1,8 +1,14 @@
-import React, { Fragment } from "react";
-import "./App.css";
+import React, { Fragment } from 'react';
+import Navigation from './components/layout/Navigation';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
-  return (<Fragment></Fragment>);
+  return (
+    <Fragment>
+      <Navigation></Navigation>
+    </Fragment>
+  );
 };
 
 export default App;
