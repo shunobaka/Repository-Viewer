@@ -3,8 +3,10 @@ import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
 
 const Navigation = () => {
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">Home</Navbar.Brand>
+    <Navbar bg="dark" expand="lg">
+      <Navbar.Brand href="/">
+        <span className="glyphicon glyphicon-home home-button">Home</span>
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Form inline className="ml-auto">
