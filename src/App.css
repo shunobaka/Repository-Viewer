@@ -24,7 +24,7 @@ body {
 }
 
 .home-button {
-  color: #bada55;
+  color: #bada55 !important;
 }
 
 button.btn-outline-success {
