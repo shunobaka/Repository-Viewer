@@ -1,4 +1,8 @@
 import React, { Fragment } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import userActionCreator from '../../actionCreators/user';
 import Users from './Users';
 
 const Search = ({ match }) => {
@@ -21,4 +25,12 @@ const Search = ({ match }) => {
   );
 };
 
-export default Search;
+const mapStateToProps = (state) => ({
+  users: state.users,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return { actions: bindActionCreators(userActionCreator, dispatch) };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
