@@ -5,10 +5,7 @@ const Landing = () => {
     <section className="landing">
       <div className="landing-inner">
         <h1>Welcome to Github-Repo-Viewer</h1>
-        <h3>
-          Enter a github username in the navigation bar above to view user's
-          repositories.
-        </h3>
+        <h3>Search for a user in the navigation above to view repositories.</h3>
       </div>
     </section>
   );

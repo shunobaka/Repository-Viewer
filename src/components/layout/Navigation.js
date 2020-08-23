@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
 
-const Navigation = () => {
+const Navigation = (props) => {
+  const [userInput, setUserInput] = useState('');
+
+  const onChange = (e) => {
+    setUserInput(e.target.value);
+  };
+
   return (
     <Navbar bg="dark" expand="lg">
       <Navbar.Brand href="/" className="home-button">
@@ -12,10 +19,14 @@ const Navigation = () => {
         <Form inline className="ml-auto">
           <FormControl
             type="text"
-            placeholder="Github User"
+            placeholder="Username"
             className="mr-sm-2"
+            value={userInput}
+            onChange={onChange}
           />
-          <Button variant="outline-success">View</Button>
+          <Link to={`/search/${userInput}`}>
+            <Button variant="outline-success">Search</Button>
+          </Link>
         </Form>
       </Navbar.Collapse>
     </Navbar>
