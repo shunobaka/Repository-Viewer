@@ -6,6 +6,10 @@ h2 {
   margin-top: 10px;
 }
 
+.green-text {
+  color: #bada55;
+}
+
 .landing {
   position: fixed;
   bottom: 0;
