@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import userActionCreator from '../../actionCreators/user';
-import Users from './Users';
+import SearchResults from './SearchResults';
 
 const Search = ({ user: { users, query }, actions: { getUsers }, match }) => {
   useEffect(() => {
@@ -14,7 +14,7 @@ const Search = ({ user: { users, query }, actions: { getUsers }, match }) => {
     <Fragment>
       <h2 className="text-center green-text">Search results for {query}:</h2>
       {users && users.length > 0 ? (
-        <Users users={users} />
+        <SearchResults users={users} />
       ) : (
         <h2 className="text-center green-text">
           No users found with this username. Please try again.

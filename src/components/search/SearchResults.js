@@ -1,22 +1,24 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import UserItem from './UserItem';
+import SearchResultItem from './SearchResultItem';
 import PropTypes from 'prop-types';
 
-const Users = ({ users }) => {
+const SearchResults = ({ users }) => {
   return (
     <Container>
       <Row>
         {users.map((user) => {
-          return <UserItem key={user.id} user={user}></UserItem>;
+          return (
+            <SearchResultItem key={user.id} user={user}></SearchResultItem>
+          );
         })}
       </Row>
     </Container>
   );
 };
 
-Users.propTypes = {
+SearchResults.propTypes = {
   users: PropTypes.array.isRequired,
 };
 
-export default Users;
+export default SearchResults;
