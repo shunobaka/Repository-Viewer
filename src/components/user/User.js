@@ -41,14 +41,14 @@ const User = ({
           {repositories.length > 0 ? (
             <Fragment>
               <h4 className=" text-center green-text">
-                Click repository name to view additional info
+                Click repository name to view details
               </h4>
               <br />
               <Container>
                 <Row className="justify-content-md-center">
-                  <Col sm="auto">
+                  <Col lg="auto">
                     <h4 className="text-center green-text">
-                      Search repositories:
+                      Filter repositories by name:
                     </h4>
                     <Form
                       inline

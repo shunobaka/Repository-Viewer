@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
+import { Container, Row, Col, Accordion } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import RepositoryItem from './RepositoryItem';
 
@@ -7,7 +7,7 @@ const Repositories = ({ repositories }) => {
   return (
     <Container>
       <Row>
-        <Col md={{ span: 6, offset: 3 }}>
+        <Col lg={{ span: 6, offset: 3 }}>
           <Accordion>
             {repositories.map((repo, index) => {
               return (

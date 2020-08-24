@@ -9,7 +9,23 @@ const RepositoryItem = ({ repository, index }) => {
         {index + 1}. {repository.name}
       </Accordion.Toggle>
       <Accordion.Collapse eventKey={repository.id}>
-        <Card.Body>Hello! I'm the body</Card.Body>
+        <Card.Body>
+          <a href={repository.url}>Go to repository</a>
+          <br />
+          <br />
+          <h5>Description:</h5>
+          {repository.description ? (
+            <span>{repository.description}</span>
+          ) : (
+            <span className="text-warning">
+              This repository does not have a description
+            </span>
+          )}
+          <br />
+          <br />
+          <h5>Created on:</h5>
+          <span>{new Date(repository.created_at).toLocaleDateString()}</span>
+        </Card.Body>
       </Accordion.Collapse>
     </Card>
   );
