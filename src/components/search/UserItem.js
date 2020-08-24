@@ -7,7 +7,7 @@ const UserItem = ({ user }) => {
   return (
     <Col md={3}>
       <Jumbotron>
-        <Link to={`/user/${user.id}`}>
+        <Link to={`/user/${user.username}`}>
           <h4 className="text-center">{user.username}</h4>
           <Image width="100%" src={user.avatar} />
         </Link>
