@@ -6,7 +6,7 @@ const RepositoryItem = ({ repository, index }) => {
   return (
     <Card>
       <Accordion.Toggle as={Card.Header} eventKey={repository.id}>
-        {index + 1}. {repository.name}
+        {`${index + 1}.`.padEnd(4)} {repository.name}
       </Accordion.Toggle>
       <Accordion.Collapse eventKey={repository.id}>
         <Card.Body>
@@ -39,6 +39,7 @@ RepositoryItem.propTypes = {
     description: PropTypes.string,
     created_at: PropTypes.string,
   }),
+  index: PropTypes.number.isRequired,
 };
 
 export default RepositoryItem;

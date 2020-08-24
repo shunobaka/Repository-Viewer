@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import userActionCreator from '../../actionCreators/user';
 import SearchResults from './SearchResults';
@@ -22,6 +23,16 @@ const Search = ({ user: { users, query }, actions: { getUsers }, match }) => {
       )}
     </Fragment>
   );
+};
+
+Search.propTypes = {
+  user: PropTypes.shape({
+    users: PropTypes.array.isRequired,
+    query: PropTypes.string,
+  }).isRequired,
+  actions: PropTypes.shape({
+    getUsers: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = (state) => ({

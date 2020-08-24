@@ -6,10 +6,6 @@ h2 {
   margin: 15px 0 5px;
 }
 
-.green-text {
-  color: #bada55;
-}
-
 .jumbotron {
   padding: 10px;
 }
@@ -33,6 +29,10 @@ h2 {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.green-text {
+  color: #bada55;
 }
 
 .home-button {

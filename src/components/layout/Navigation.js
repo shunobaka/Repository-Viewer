@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
 
-const Navigation = (props) => {
+const Navigation = () => {
   const [userInput, setUserInput] = useState('');
   const history = useHistory();
 

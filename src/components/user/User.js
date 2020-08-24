@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import repositoryActionCreator from '../../actionCreators/repository';
 import userActionCreator from '../../actionCreators/user';
@@ -31,6 +32,12 @@ const User = ({
     setFilterInput(e.target.value);
   };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    filterRepositories(filterInput);
+  };
+
   return (
     <Fragment>
       {user ? (
@@ -38,7 +45,7 @@ const User = ({
           <h2 className="text-center green-text">
             Viewing repositories for {user.username}
           </h2>
-          {repositories.length > 0 ? (
+          {user.num_repos > 0 ? (
             <Fragment>
               <h4 className=" text-center green-text">
                 Click repository name to view details
@@ -50,19 +57,16 @@ const User = ({
                     <h4 className="text-center green-text">
                       Filter repositories by name:
                     </h4>
-                    <Form
-                      inline
-                      onSubmit={(e) => {
-                        e.preventDefault();
-                      }}
-                    >
+                    <Form inline onSubmit={onSubmit}>
                       <FormControl
                         type="text"
                         className="mr-sm-2 ml-auto"
                         value={filterInput}
                         onChange={onChange}
                       />
-                      <Button variant="outline-success mr-auto">Filter</Button>
+                      <Button type="submit" variant="outline-success mr-auto">
+                        Filter
+                      </Button>
                     </Form>
                   </Col>
                 </Row>
@@ -79,6 +83,24 @@ const User = ({
       )}
     </Fragment>
   );
+};
+
+User.propTypes = {
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    num_repos: PropTypes.number.isRequired,
+  }),
+  repositories: PropTypes.array.isRequired,
+  actions: PropTypes.shape({
+    getRepositoriesForUser: PropTypes.func.isRequired,
+    filterRepositories: PropTypes.func.isRequired,
+    loadUser: PropTypes.func.isRequired,
+  }).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      username: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = (state) => ({

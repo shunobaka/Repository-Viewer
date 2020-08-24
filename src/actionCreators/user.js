@@ -11,6 +11,7 @@ const getUsers = (nameQuery) => async (dispatch) => {
       username: item.login,
       avatar: item.avatar_url,
       id: item.id,
+      num_repos: item.public_repos,
     }));
 
     return dispatch(usersLoaded(payload, nameQuery));
@@ -30,6 +31,7 @@ const loadUser = (username) => async (dispatch) => {
         id: res.data.id,
         username: res.data.login,
         avatar: res.data.avatar_url,
+        num_repos: res.data.public_repos,
       };
     } catch (err) {
       return dispatch(addAlert(err.msg));

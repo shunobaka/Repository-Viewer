@@ -8,13 +8,23 @@ const Repositories = ({ repositories }) => {
     <Container>
       <Row>
         <Col lg={{ span: 6, offset: 3 }}>
-          <Accordion>
-            {repositories.map((repo, index) => {
-              return (
-                <RepositoryItem key={repo.id} index={index} repository={repo} />
-              );
-            })}
-          </Accordion>
+          {repositories.length > 0 ? (
+            <Accordion>
+              {repositories.map((repo, index) => {
+                return (
+                  <RepositoryItem
+                    key={repo.id}
+                    index={index}
+                    repository={repo}
+                  />
+                );
+              })}
+            </Accordion>
+          ) : (
+            <div className="alert alert-warning">
+              No repositories match the filter!
+            </div>
+          )}
         </Col>
       </Row>
     </Container>
