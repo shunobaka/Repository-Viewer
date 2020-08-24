@@ -1,6 +1,7 @@
 import githubApi from '../utils/githubApi';
 import { usersLoaded, userLoaded } from '../actions/user';
 import { addAlert } from '../actions/alert';
+import store from '../store';
 
 const getUsers = (nameQuery) => async (dispatch) => {
   try {
@@ -18,18 +19,27 @@ const getUsers = (nameQuery) => async (dispatch) => {
   }
 };
 
-// TODO: Get user info, not repositories
-const getUser = (username) => async (dispatch) => {
-  try {
-    const res = await githubApi.get(`/users/${username}/repos`);
+const loadUser = (username) => async (dispatch) => {
+  let user = store.getState().user.users.find((u) => u.username === username);
 
-    return dispatch(userLoaded(res));
-  } catch (err) {
-    return dispatch(addAlert(err.msg));
+  if (!user) {
+    try {
+      const res = await githubApi.get(`/users/${username}`);
+
+      user = {
+        id: res.data.id,
+        username: res.data.login,
+        avatar: res.data.avatar_url,
+      };
+    } catch (err) {
+      return dispatch(addAlert(err.msg));
+    }
   }
+
+  return dispatch(userLoaded(user));
 };
 
 export default {
   getUsers,
-  getUser,
+  loadUser,
 };
