@@ -10,6 +10,10 @@ h2 {
   color: #bada55;
 }
 
+.jumbotron {
+  padding: 10px;
+}
+
 .landing {
   position: fixed;
   bottom: 0;

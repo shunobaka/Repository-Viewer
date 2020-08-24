@@ -1,12 +1,17 @@
 import React from 'react';
-import { Col, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Col, Image, Jumbotron } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 const UserItem = ({ user }) => {
   return (
-    <Col xm={4}>
-      <h5>{user.login}</h5>
-      <Image src={user.avatar_url} />
+    <Col md={3}>
+      <Jumbotron>
+        <Link to={`/user/${user.id}`}>
+          <h4 className="text-center">{user.username}</h4>
+          <Image width="100%" src={user.avatar} />
+        </Link>
+      </Jumbotron>
     </Col>
   );
 };

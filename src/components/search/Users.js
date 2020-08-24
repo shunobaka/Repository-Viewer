@@ -1,14 +1,17 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { Container, Row } from 'react-bootstrap';
 import UserItem from './UserItem';
 import PropTypes from 'prop-types';
 
 const Users = ({ users }) => {
   return (
-    <Fragment>
-      {users.map((user) => {
-        return <UserItem user></UserItem>;
-      })}
-    </Fragment>
+    <Container>
+      <Row>
+        {users.map((user) => {
+          return <UserItem key={user.id} user={user}></UserItem>;
+        })}
+      </Row>
+    </Container>
   );
 };
 
