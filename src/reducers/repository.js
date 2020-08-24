@@ -18,10 +18,8 @@ export default function (state = initialState, action) {
     case REPOSITORIES_FILTERED:
       return {
         ...state,
-        displayed_repositories: state.repositories.filter(
-          (item) =>
-            item.name.toLowerCase().includes(payload) ||
-            item.description.toLowerCase().includes(payload)
+        displayed_repositories: state.repositories.filter((item) =>
+          item.name.toLowerCase().includes(payload.toLowerCase())
         ),
       };
     default:
