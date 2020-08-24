@@ -8,7 +8,7 @@ import { addAlert } from '../actions/alert';
 const getRepositoriesForUser = (username) => async (dispatch) => {
   try {
     const res = await githubApi.get(`/users/${username}/repos`);
-    const payload = res.data.items.map((item) => ({
+    const payload = res.data.map((item) => ({
       id: item.id,
       name: item.name,
       url: item.html_url,
@@ -24,4 +24,9 @@ const getRepositoriesForUser = (username) => async (dispatch) => {
 
 const filterRepositories = (query) => (dispatch) => {
   dispatch(repositoriesFiltered(query));
+};
+
+export default {
+  getRepositoriesForUser,
+  filterRepositories,
 };
