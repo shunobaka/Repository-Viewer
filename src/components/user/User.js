@@ -29,13 +29,9 @@ import Repositories from './Repositories';
  *    and match object
  */
 const User = ({
-  /** The redux state user whose repositories are being displayed */
   user,
-  /** The redux state repositories to be displayed */
   repositories,
-  /** Redux state boolean that signals loading of data */
   loading,
-  /** Actions used to retrieve and filter repositories, load user and remove alerts */
   actions: {
     getRepositoriesForUser,
     filterRepositories,
@@ -44,10 +40,8 @@ const User = ({
   },
   match,
 }) => {
-  /** The string variable and update function bound to the filter text input field. */
   const [filterInput, setFilterInput] = useState('');
 
-  /** When component mounts or updates, remove the alerts and update user and repos */
   useEffect(() => {
     removeAlerts();
     loadUser(match.params.username);
@@ -120,12 +114,16 @@ const User = ({
 };
 
 User.propTypes = {
+  /** The redux state user whose repositories are being displayed */
   user: PropTypes.shape({
     username: PropTypes.string.isRequired,
     num_repos: PropTypes.number.isRequired,
   }),
+  /** The redux state repositories to be displayed */
   repositories: PropTypes.array.isRequired,
+  /** Redux state boolean that signals loading of data */
   loading: PropTypes.bool.isRequired,
+  /** Actions used to retrieve and filter repositories, load user and remove alerts */
   actions: PropTypes.shape({
     getRepositoriesForUser: PropTypes.func.isRequired,
     filterRepositories: PropTypes.func.isRequired,

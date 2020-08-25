@@ -17,7 +17,6 @@ const getRepositoriesForUser = (username) => async (dispatch) => {
   try {
     const res = await githubApi.get(`/users/${username}/repos`);
 
-    // Maps the repositories from the response to objects with the expected information.
     const payload = res.data.map((item) => ({
       id: item.id,
       name: item.name,

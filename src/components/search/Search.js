@@ -19,14 +19,10 @@ import { Spinner } from 'react-bootstrap';
  *    and match object
  */
 const Search = ({
-  /** The user redux state */
   user: { users, query, loading },
-  /** Actions used to retrieve users and remove alerts */
   actions: { getUsers, removeAlerts },
-  /** Match object used to retrieve query from url */
   match,
 }) => {
-  /** When component mounts or updates, remove the alerts and update displayed users */
   useEffect(() => {
     removeAlerts();
     getUsers(match.params.query);
@@ -57,11 +53,13 @@ const Search = ({
 };
 
 Search.propTypes = {
+  /** The user redux state */
   user: PropTypes.shape({
     users: PropTypes.array.isRequired,
     query: PropTypes.string,
     loading: PropTypes.bool.isRequired,
   }).isRequired,
+  /** Actions used to retrieve users and remove alerts */
   actions: PropTypes.shape({
     getUsers: PropTypes.func.isRequired,
   }).isRequired,
