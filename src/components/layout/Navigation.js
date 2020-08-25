@@ -9,9 +9,7 @@ import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
  * Navigation react component that renders a navbar.
  */
 const Navigation = () => {
-  // The string variable and update function bound to the rendered text input field.
   const [userInput, setUserInput] = useState('');
-  // The browser history object
   const history = useHistory();
 
   const onChange = (e) => {

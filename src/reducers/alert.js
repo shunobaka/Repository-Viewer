@@ -1,7 +1,7 @@
 /**
  * @fileoverview Defines a reducer used to process redux actions related to alert state.
  */
-import { ADD_ALERT, REMOVE_ALERT } from '../actions/types';
+import { ADD_ALERT, REMOVE_ALERT, CLEAR_ALERTS } from '../actions/types';
 
 /**
  * The initial alert redux state.
@@ -23,6 +23,8 @@ export default function (state = initialState, action) {
       return [...state, payload];
     case REMOVE_ALERT:
       return state.filter((alert) => alert.id !== payload);
+    case CLEAR_ALERTS:
+      return [];
     default:
       return state;
   }

@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import userActionCreator from '../../actionCreators/user';
 import alertActionCreator from '../../actionCreators/alert';
 import SearchResults from './SearchResults';
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Container } from 'react-bootstrap';
 
 /**
  * Search react component that displays a page with list of github users matching
@@ -42,9 +42,12 @@ const Search = ({
           {users && users.length > 0 ? (
             <SearchResults users={users} />
           ) : (
-            <h2 className="text-center green-text">
-              No users found with this username. Please try again.
-            </h2>
+            <Container className="text-center">
+              <br />
+              <div className="alert alert-warning">
+                No users found matching {query}!
+              </div>
+            </Container>
           )}
         </Fragment>
       )}

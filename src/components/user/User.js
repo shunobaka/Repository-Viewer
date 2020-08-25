@@ -101,7 +101,12 @@ const User = ({
               )}
             </Fragment>
           ) : (
-            <h4>User has no repositories</h4>
+            <Container className="text-center">
+              <br />
+              <div className="alert alert-warning">
+                User has no repositories!
+              </div>
+            </Container>
           )}
         </Fragment>
       ) : (
