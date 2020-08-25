@@ -1,6 +1,6 @@
 /**
  * @fileoverview Contains functions for loading repositories and interacting
- * with loaded repositories. Functions dispatch redux actions.
+ *    with loaded repositories. Functions dispatch redux actions.
  */
 import githubApi from '../utils/githubApi';
 import {
