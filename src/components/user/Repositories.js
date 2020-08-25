@@ -1,8 +1,16 @@
+/**
+ * @fileoverview Defines a Repositories react component that renders a list of
+ *    repositories.
+ */
 import React from 'react';
 import { Container, Row, Col, Accordion } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import RepositoryItem from './RepositoryItem';
 
+/**
+ * Repositories react component that renders a list of repositories.
+ * @param {object} props Contains the array of repositories to be displayed
+ */
 const Repositories = ({ repositories }) => {
   return (
     <Container>

@@ -1,3 +1,8 @@
+/**
+ * @fileoverview Defines a User react component that uses the user and
+ *    repository redux states to display a page with filtering option and
+ *    list of user repositories.
+ */
 import React, { Fragment, useEffect, useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -17,10 +22,20 @@ import {
 } from 'react-bootstrap';
 import Repositories from './Repositories';
 
+/**
+ * User react component that displays a page with filtering option and list of
+ *    user repositories. Gets dynamically updated when user redux state changes.
+ * @param {object} props Contains mapped user redux state, action creator functions
+ *    and match object
+ */
 const User = ({
+  /** The redux state user whose repositories are being displayed */
   user,
+  /** The redux state repositories to be displayed */
   repositories,
+  /** Redux state boolean that signals loading of data */
   loading,
+  /** Actions used to retrieve and filter repositories, load user and remove alerts */
   actions: {
     getRepositoriesForUser,
     filterRepositories,
@@ -29,8 +44,10 @@ const User = ({
   },
   match,
 }) => {
+  /** The string variable and update function bound to the filter text input field. */
   const [filterInput, setFilterInput] = useState('');
 
+  /** When component mounts or updates, remove the alerts and update user and repos */
   useEffect(() => {
     removeAlerts();
     loadUser(match.params.username);
@@ -121,12 +138,22 @@ User.propTypes = {
   }).isRequired,
 };
 
+/**
+ * Maps the user and repository redux states to the props consumed by the
+ *    react component.
+ * @param {object} state The complete redux state object
+ */
 const mapStateToProps = (state) => ({
   user: state.user.user,
   repositories: state.repository.displayed_repositories,
   loading: state.repository.loading,
 });
 
+/**
+ * Binds the dispatch function to the action creators and maps them to the
+ *    props consumed by the react component
+ * @param {Function} dispatch The dispatch function
+ */
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(

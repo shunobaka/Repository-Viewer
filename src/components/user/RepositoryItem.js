@@ -1,7 +1,16 @@
+/**
+ * @fileoverview Defines a RepositoryItem react component that renders a
+ *    an accordion card with information repository.
+ */
 import React from 'react';
 import { Accordion, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
+/**
+ * RepositoryItem react component that renders repository information.
+ * @param {object} props Contains the the repository and its index in the
+ *    list of repositories
+ */
 const RepositoryItem = ({ repository, index }) => {
   return (
     <Card>
