@@ -1,4 +1,4 @@
-import { addAlert, removeAlert } from '../actions/alert';
+import { addAlert, removeAlert, clearAlerts } from '../actions/alert';
 import uuid from '../utils/uuid';
 
 export const setAlert = (message, remove = true, timeout = 5000) => async (
@@ -17,6 +17,11 @@ export const setAlert = (message, remove = true, timeout = 5000) => async (
   }
 };
 
+export const removeAlerts = () => async (dispatch) => {
+  dispatch(clearAlerts());
+};
+
 export default {
   setAlert,
+  removeAlerts,
 };

@@ -27,8 +27,8 @@ Alert.propTypes = {
   alerts: PropTypes.array.isRequired,
 };
 
-const matchStateToProps = (state) => ({
+const mapStateToProps = (state) => ({
   alerts: state.alert,
 });
 
-export default connect(matchStateToProps)(Alert);
+export default connect(mapStateToProps)(Alert);

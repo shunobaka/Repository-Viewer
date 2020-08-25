@@ -1,4 +1,4 @@
-import { ADD_ALERT, REMOVE_ALERT } from './types';
+import { ADD_ALERT, REMOVE_ALERT, CLEAR_ALERTS } from './types';
 
 export const addAlert = (alert) => {
   return {
@@ -11,5 +11,11 @@ export const removeAlert = (id) => {
   return {
     type: REMOVE_ALERT,
     payload: id,
+  };
+};
+
+export const clearAlerts = () => {
+  return {
+    type: CLEAR_ALERTS,
   };
 };

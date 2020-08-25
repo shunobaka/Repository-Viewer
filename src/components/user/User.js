@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import repositoryActionCreator from '../../actionCreators/repository';
 import userActionCreator from '../../actionCreators/user';
+import alertActionCreator from '../../actionCreators/alert';
 import {
   Form,
   FormControl,
@@ -20,15 +21,21 @@ const User = ({
   user,
   repositories,
   loading,
-  actions: { getRepositoriesForUser, filterRepositories, loadUser },
+  actions: {
+    getRepositoriesForUser,
+    filterRepositories,
+    loadUser,
+    removeAlerts,
+  },
   match,
 }) => {
   const [filterInput, setFilterInput] = useState('');
 
   useEffect(() => {
+    removeAlerts();
     loadUser(match.params.username);
     getRepositoriesForUser(match.params.username);
-  }, [loadUser, getRepositoriesForUser, match.params.username]);
+  }, [removeAlerts, loadUser, getRepositoriesForUser, match.params.username]);
 
   const onChange = (e) => {
     setFilterInput(e.target.value);
@@ -123,7 +130,11 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(
-      { ...repositoryActionCreator, ...userActionCreator },
+      {
+        ...repositoryActionCreator,
+        ...userActionCreator,
+        ...alertActionCreator,
+      },
       dispatch
     ),
   };

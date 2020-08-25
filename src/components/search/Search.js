@@ -4,17 +4,19 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import userActionCreator from '../../actionCreators/user';
+import alertActionCreator from '../../actionCreators/alert';
 import SearchResults from './SearchResults';
 import { Spinner } from 'react-bootstrap';
 
 const Search = ({
   user: { users, query, loading },
-  actions: { getUsers },
+  actions: { getUsers, removeAlerts },
   match,
 }) => {
   useEffect(() => {
+    removeAlerts();
     getUsers(match.params.query);
-  }, [getUsers, match.params.query]);
+  }, [removeAlerts, getUsers, match.params.query]);
 
   return (
     <Fragment>
@@ -56,7 +58,12 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => {
-  return { actions: bindActionCreators(userActionCreator, dispatch) };
+  return {
+    actions: bindActionCreators(
+      { ...alertActionCreator, ...userActionCreator },
+      dispatch
+    ),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
