@@ -19,6 +19,7 @@ import Repositories from './Repositories';
 const User = ({
   user,
   repositories,
+  loading,
   actions: { getRepositoriesForUser, filterRepositories, loadUser },
   match,
 }) => {
@@ -73,7 +74,13 @@ const User = ({
                 </Row>
               </Container>
               <br />
-              <Repositories repositories={repositories} />
+              {!loading ? (
+                <Repositories repositories={repositories} />
+              ) : (
+                <h2 className="text-center">
+                  <Spinner animation="border" variant="success" />
+                </h2>
+              )}
             </Fragment>
           ) : (
             <h4>User has no repositories</h4>
@@ -94,6 +101,7 @@ User.propTypes = {
     num_repos: PropTypes.number.isRequired,
   }),
   repositories: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
   actions: PropTypes.shape({
     getRepositoriesForUser: PropTypes.func.isRequired,
     filterRepositories: PropTypes.func.isRequired,
@@ -109,6 +117,7 @@ User.propTypes = {
 const mapStateToProps = (state) => ({
   user: state.user.user,
   repositories: state.repository.displayed_repositories,
+  loading: state.repository.loading,
 });
 
 const mapDispatchToProps = (dispatch) => {

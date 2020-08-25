@@ -1,9 +1,9 @@
 import { REPOSITORIES_LOADED, REPOSITORIES_FILTERED } from '../actions/types';
 
-// TODO: Check naming
 const initialState = {
   repositories: [],
   displayed_repositories: [],
+  loading: true,
 };
 
 export default function (state = initialState, action) {
@@ -14,6 +14,7 @@ export default function (state = initialState, action) {
       return {
         repositories: payload,
         displayed_repositories: payload,
+        loading: false,
       };
     case REPOSITORIES_FILTERED:
       return {
