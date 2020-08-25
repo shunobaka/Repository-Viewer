@@ -3,8 +3,8 @@
  *    with loaded users. Functions dispatch redux actions.
  */
 import githubApi from '../utils/githubApi';
-import { usersLoaded, userLoaded } from '../actions/user';
 import { setAlert } from '../actionCreators/alert';
+import { usersLoaded, userLoaded } from '../actions/user';
 
 /**
  * Loads information for users matching the username query using the github API.

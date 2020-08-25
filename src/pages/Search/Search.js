@@ -6,11 +6,11 @@ import React, { Fragment, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Container, Spinner } from 'react-bootstrap';
 
-import userActionCreator from '../../actionCreators/user';
 import alertActionCreator from '../../actionCreators/alert';
+import userActionCreator from '../../actionCreators/user';
 import SearchResults from '../../components/search/SearchResults';
-import { Spinner, Container } from 'react-bootstrap';
 
 /**
  * Search react component that displays a page with list of github users matching

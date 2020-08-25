@@ -3,11 +3,11 @@
  *    with loaded repositories. Functions dispatch redux actions.
  */
 import githubApi from '../utils/githubApi';
+import { setAlert } from '../actionCreators/alert';
 import {
   repositoriesLoaded,
   repositoriesFiltered,
 } from '../actions/repository';
-import { setAlert } from '../actionCreators/alert';
 
 /**
  * Loads information for the user repositories using the github API.

@@ -3,8 +3,9 @@
  *    repositories.
  */
 import React from 'react';
-import { Container, Row, Col, Accordion } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Container, Row, Col, Accordion } from 'react-bootstrap';
+
 import RepositoryItem from './RepositoryItem';
 
 /**

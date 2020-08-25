@@ -4,8 +4,8 @@
  */
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Container } from 'react-bootstrap';
 
 /**
  * Alert react component that displays provided alerts. Gets dynamically updated when

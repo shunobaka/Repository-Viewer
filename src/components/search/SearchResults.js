@@ -3,9 +3,10 @@
  *    github users.
  */
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
-import SearchResultItem from './SearchResultItem';
 import PropTypes from 'prop-types';
+import { Container, Row } from 'react-bootstrap';
+
+import SearchResultItem from './SearchResultItem';
 
 /**
  * SearchResults react component that displays a list of github users.

@@ -1,8 +1,8 @@
 /**
  * @fileoverview Contains functions which dispatch actions related to alert messages.
  */
-import { addAlert, removeAlert, clearAlerts } from '../actions/alert';
 import uuid from '../utils/uuid';
+import { addAlert, removeAlert, clearAlerts } from '../actions/alert';
 
 /**
  * Dispatches an action used to create a new alert. If remove param is true,

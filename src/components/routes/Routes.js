@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+
 import Landing from '../../pages/Landing/Landing';
 import NotFound from '../../pages/NotFound/NotFound';
 import Search from '../../pages/Search/Search';

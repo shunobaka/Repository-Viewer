@@ -3,8 +3,8 @@
  *    an accordion card with information repository.
  */
 import React from 'react';
-import { Accordion, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Accordion, Card } from 'react-bootstrap';
 
 /**
  * RepositoryItem react component that renders repository information.

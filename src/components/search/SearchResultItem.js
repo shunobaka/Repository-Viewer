@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Col, Image, Jumbotron } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Col, Image, Jumbotron } from 'react-bootstrap';
 
 /**
  * SearchResultItem react component that displays user information in a react-bootstrap Col

@@ -4,8 +4,8 @@
  *    list of user repositories.
  */
 import React, { Fragment, useEffect, useState } from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   Form,
@@ -20,7 +20,6 @@ import {
 import repositoryActionCreator from '../../actionCreators/repository';
 import userActionCreator from '../../actionCreators/user';
 import alertActionCreator from '../../actionCreators/alert';
-
 import Repositories from '../../components/user/Repositories';
 
 /**
