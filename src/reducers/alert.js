@@ -1,7 +1,20 @@
+/**
+ * @fileoverview Defines a reducer used to process redux actions related to alert state.
+ */
 import { ADD_ALERT, REMOVE_ALERT } from '../actions/types';
 
+/**
+ * The initial alert redux state.
+ */
 const initialState = [];
 
+/**
+ * Returns a new alert state based on current state and provided action.
+ * @param {array} state The redux alert state
+ * @param {object} action Redux action object
+ * @return {array} Updated state array of alert objects
+ * @export
+ */
 export default function (state = initialState, action) {
   const { type, payload } = action;
 
