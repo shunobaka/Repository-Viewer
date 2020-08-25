@@ -1,5 +1,11 @@
+/**
+ * @fileoverview Defines a Landing react component that renders a simple landing page.
+ */
 import React from 'react';
 
+/**
+ * Landing react component that renders a simple landing page.
+ */
 const Landing = () => {
   return (
     <section className="landing">

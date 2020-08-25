@@ -1,5 +1,11 @@
+/**
+ * @fileoverview Defines a NotFound react component that renders a simple not-found page.
+ */
 import React from 'react';
 
+/**
+ * NotFound react component that renders a simple not-found page.
+ */
 const NotFound = () => {
   return (
     <section className="landing">
