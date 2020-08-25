@@ -1,7 +1,6 @@
 import githubApi from '../utils/githubApi';
 import { usersLoaded, userLoaded } from '../actions/user';
-import { addAlert } from '../actions/alert';
-import store from '../store';
+import { setAlert } from '../actionCreators/alert';
 
 const getUsers = (nameQuery) => async (dispatch) => {
   try {
@@ -14,31 +13,32 @@ const getUsers = (nameQuery) => async (dispatch) => {
       num_repos: item.public_repos,
     }));
 
-    return dispatch(usersLoaded(payload, nameQuery));
+    dispatch(usersLoaded(payload, nameQuery));
   } catch (err) {
-    return dispatch(addAlert(err.msg));
+    dispatch(
+      setAlert(
+        'There was a problem searching for users, please try again.',
+        false
+      )
+    );
   }
 };
 
 const loadUser = (username) => async (dispatch) => {
-  let user = store.getState().user.users.find((u) => u.username === username);
+  try {
+    const res = await githubApi.get(`/users/${username}`);
 
-  if (!user) {
-    try {
-      const res = await githubApi.get(`/users/${username}`);
+    const user = {
+      id: res.data.id,
+      username: res.data.login,
+      avatar: res.data.avatar_url,
+      num_repos: res.data.public_repos,
+    };
 
-      user = {
-        id: res.data.id,
-        username: res.data.login,
-        avatar: res.data.avatar_url,
-        num_repos: res.data.public_repos,
-      };
-    } catch (err) {
-      return dispatch(addAlert(err.msg));
-    }
+    dispatch(userLoaded(user));
+  } catch (err) {
+    dispatch(setAlert('Could not retrieve user, please try again.', false));
   }
-
-  return dispatch(userLoaded(user));
 };
 
 export default {

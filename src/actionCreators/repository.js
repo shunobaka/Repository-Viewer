@@ -3,7 +3,7 @@ import {
   repositoriesLoaded,
   repositoriesFiltered,
 } from '../actions/repository';
-import { addAlert } from '../actions/alert';
+import { setAlert } from '../actionCreators/alert';
 
 const getRepositoriesForUser = (username) => async (dispatch) => {
   try {
@@ -18,7 +18,12 @@ const getRepositoriesForUser = (username) => async (dispatch) => {
 
     dispatch(repositoriesLoaded(payload));
   } catch (err) {
-    dispatch(addAlert(err.msg));
+    dispatch(
+      setAlert(
+        'There was a problem retrieving user repositories, please try again.',
+        false
+      )
+    );
   }
 };
 

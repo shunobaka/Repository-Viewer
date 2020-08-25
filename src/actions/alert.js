@@ -1,8 +1,17 @@
-import { ADD_ALERT } from './types';
+import { ADD_ALERT, REMOVE_ALERT } from './types';
 
-export const addAlert = (message) => {
+export const addAlert = (alert) => {
+  console.log('1');
   return {
     type: ADD_ALERT,
-    payload: message,
+    payload: alert,
+  };
+};
+
+export const removeAlert = (id) => {
+  console.log('2');
+  return {
+    type: REMOVE_ALERT,
+    payload: id,
   };
 };
