@@ -10,8 +10,8 @@ import {
 import { setAlert } from '../actionCreators/alert';
 
 /**
- * Loads information for the user repositories using the github API
- * @param {string} username The username of the user whose repositories will be loaded.
+ * Loads information for the user repositories using the github API.
+ * @param {string} username The username of the user whose repositories will be loaded
  */
 const getRepositoriesForUser = (username) => async (dispatch) => {
   try {
@@ -37,6 +37,10 @@ const getRepositoriesForUser = (username) => async (dispatch) => {
   }
 };
 
+/**
+ * Filters the loaded repositories by name, based on the provided query.
+ * @param {string} query The query used to filter repositories by name
+ */
 const filterRepositories = (query) => (dispatch) => {
   dispatch(repositoriesFiltered(query));
 };

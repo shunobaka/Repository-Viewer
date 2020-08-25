@@ -8,7 +8,7 @@ import uuid from '../utils/uuid';
  * Dispatches an action used to create a new alert. If remove param is true,
  * after certain time passes dispatches an action to remove the alert.
  * @param {string} message The message of the alert
- * @param {boolean} remove Whether the alert should be removed after timeout.
+ * @param {boolean} remove Whether the alert should be removed after timeout
  * @param {number} timeout Amount of time in ms before the alert is removed
  * @export
  */
