@@ -1,8 +1,16 @@
+/**
+ * @fileoverview Defines a SearchResultItem react component that displays user information.
+ */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Image, Jumbotron } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
+/**
+ * SearchResultItem react component that displays user information in a react-bootstrap Col
+ *    container.
+ * @param {object} props Contains the user information to be displayed
+ */
 const UserItem = ({ user }) => {
   return (
     <Col md={3}>

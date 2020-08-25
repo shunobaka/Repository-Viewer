@@ -1,8 +1,16 @@
+/**
+ * @fileoverview Defines a SearchResults react component that displays a list of
+ *    github users.
+ */
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import SearchResultItem from './SearchResultItem';
 import PropTypes from 'prop-types';
 
+/**
+ * SearchResults react component that displays a list of github users.
+ * @param {object} props Contains an array of user information to be displayed
+ */
 const SearchResults = ({ users }) => {
   return (
     <Container>
