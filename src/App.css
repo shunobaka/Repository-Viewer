@@ -10,6 +10,11 @@ h2 {
   padding: 10px;
 }
 
+.alert-container {
+  margin: 15px;
+  font-size: 1.2em;
+}
+
 .landing {
   position: fixed;
   bottom: 0;
@@ -37,6 +42,10 @@ h2 {
 
 .home-button {
   color: #bada55 !important;
+}
+
+.home-button:hover {
+  text-decoration: none;
 }
 
 button.btn-outline-success {

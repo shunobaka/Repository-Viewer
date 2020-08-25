@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // Custom components
 import Navigation from './components/layout/Navigation';
+import Alert from './components/layout/Alert';
 import Landing from './components/layout/Landing';
 import Routes from './components/routes/Routes';
 
@@ -20,6 +21,7 @@ const App = () => {
       <BrowserRouter>
         <Fragment>
           <Navigation />
+          <Alert />
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route component={Routes} />

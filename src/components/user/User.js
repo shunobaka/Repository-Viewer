@@ -79,7 +79,7 @@ const User = ({
           )}
         </Fragment>
       ) : (
-        <h2>User loading</h2>
+        <h2 className="text-center green-text">User loading</h2>
       )}
     </Fragment>
   );

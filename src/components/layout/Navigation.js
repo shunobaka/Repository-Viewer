@@ -17,8 +17,10 @@ const Navigation = () => {
 
   return (
     <Navbar bg="dark" expand="lg">
-      <Navbar.Brand href="/" className="home-button">
-        Home
+      <Navbar.Brand>
+        <Link to="/" className="home-button">
+          Home
+        </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
