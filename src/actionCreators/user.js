@@ -1,7 +1,15 @@
+/**
+ * @fileoverview Contains functions for loading users and interacting
+ * with loaded users. Functions dispatch redux actions.
+ */
 import githubApi from '../utils/githubApi';
 import { usersLoaded, userLoaded } from '../actions/user';
 import { setAlert } from '../actionCreators/alert';
 
+/**
+ * Loads information for users matching the username query using the github API
+ * @param {string} nameQuery The username query used to search users
+ */
 const getUsers = (nameQuery) => async (dispatch) => {
   try {
     const res = await githubApi.get(`/search/users?q=${nameQuery}`);
@@ -24,6 +32,10 @@ const getUsers = (nameQuery) => async (dispatch) => {
   }
 };
 
+/**
+ * Loads information for the user matching the username using the github API
+ * @param {string} username The username of the user being loaded.
+ */
 const loadUser = (username) => async (dispatch) => {
   try {
     const res = await githubApi.get(`/users/${username}`);
