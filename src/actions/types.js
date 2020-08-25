@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines constants used to distinguish redux actions.
+ */
 export const USER_LOADED = 'USER_LOADED';
 export const USERS_SEARCH_RESULT = 'USERS_SEARCH_RESULT';
 export const REPOSITORIES_LOADED = 'REPOSITORIES_LOADED';
