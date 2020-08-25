@@ -4,6 +4,7 @@ const initialState = {
   user: null,
   users: [],
   query: null,
+  loading: true,
 };
 
 export default function (state = initialState, action) {
@@ -20,6 +21,7 @@ export default function (state = initialState, action) {
         user: null,
         users: payload.users,
         query: payload.query,
+        loading: false,
       };
     default:
       return state;

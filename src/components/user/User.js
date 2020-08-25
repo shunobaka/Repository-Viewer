@@ -12,6 +12,7 @@ import {
   Container,
   Row,
   Col,
+  Spinner,
 } from 'react-bootstrap';
 import Repositories from './Repositories';
 
@@ -79,7 +80,9 @@ const User = ({
           )}
         </Fragment>
       ) : (
-        <h2 className="text-center green-text">User loading</h2>
+        <h2 className="text-center">
+          <Spinner animation="border" variant="success" />
+        </h2>
       )}
     </Fragment>
   );
