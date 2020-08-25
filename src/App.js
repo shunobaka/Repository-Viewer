@@ -11,7 +11,7 @@ import store from './store';
 /** Custom components */
 import Navigation from './components/layout/Navigation';
 import Alert from './components/layout/Alert';
-import Landing from './components/layout/Landing';
+
 import Routes from './components/routes/Routes';
 
 /** Styling */
@@ -29,7 +29,6 @@ const App = () => {
           <Navigation />
           <Alert />
           <Switch>
-            <Route exact path="/" component={Landing} />
             <Route component={Routes} />
           </Switch>
         </Fragment>

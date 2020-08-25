@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import userActionCreator from '../../actionCreators/user';
 import alertActionCreator from '../../actionCreators/alert';
-import SearchResults from './SearchResults';
+import SearchResults from '../../components/search/SearchResults';
 import { Spinner, Container } from 'react-bootstrap';
 
 /**

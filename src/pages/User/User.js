@@ -4,13 +4,9 @@
  *    list of user repositories.
  */
 import React, { Fragment, useEffect, useState } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-
-import repositoryActionCreator from '../../actionCreators/repository';
-import userActionCreator from '../../actionCreators/user';
-import alertActionCreator from '../../actionCreators/alert';
 import {
   Form,
   FormControl,
@@ -20,7 +16,12 @@ import {
   Col,
   Spinner,
 } from 'react-bootstrap';
-import Repositories from './Repositories';
+
+import repositoryActionCreator from '../../actionCreators/repository';
+import userActionCreator from '../../actionCreators/user';
+import alertActionCreator from '../../actionCreators/alert';
+
+import Repositories from '../../components/user/Repositories';
 
 /**
  * User react component that displays a page with filtering option and list of
