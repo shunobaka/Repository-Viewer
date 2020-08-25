@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
  *    container.
  * @param {object} props Contains the user information to be displayed
  */
-const UserItem = ({ user }) => {
+const SearchResultItem = ({ user }) => {
   return (
     <Col md={3}>
       <Jumbotron>
@@ -24,11 +24,11 @@ const UserItem = ({ user }) => {
   );
 };
 
-UserItem.propTypes = {
+SearchResultItem.propTypes = {
   user: PropTypes.shape({
     login: PropTypes.string,
     avatar_url: PropTypes.string,
   }).isRequired,
 };
 
-export default UserItem;
+export default SearchResultItem;
