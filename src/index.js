@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Renders the react App component in the root element.
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
