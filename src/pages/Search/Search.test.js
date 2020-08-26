@@ -1,7 +1,11 @@
+/**
+ * @fileoverview Defines snapshot unit tests for Search page component.
+ */
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import renderer, { act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
+
 import Search from './Search';
 import store from '../../store';
 import { usersLoaded } from '../../actions/user';
@@ -10,13 +14,13 @@ import userActionCreators from '../../actionCreators/user';
 /** Mock functions to prevent creating http requests */
 jest.mock('../../actionCreators/user.js');
 
+/** Mock the actionCreators used by the component to do nothing */
 userActionCreators.getUsers.mockImplementation(() => {
   return { type: 'mock_action' };
 });
 
 describe('search snapshots', () => {
   const query = 'shunobaka';
-
   const mockUsers = [
     {
       username: 'test1',
@@ -30,7 +34,6 @@ describe('search snapshots', () => {
       num_repos: 0,
     },
   ];
-
   const match = {
     params: {
       query,

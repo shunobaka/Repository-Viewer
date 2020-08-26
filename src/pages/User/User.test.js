@@ -1,7 +1,11 @@
+/**
+ * @fileoverview Defines snapshot unit tests for User page component.
+ */
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import renderer, { act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
+
 import User from './User';
 import store from '../../store';
 import { userLoaded } from '../../actions/user';
@@ -13,10 +17,10 @@ import repositoryActionCreators from '../../actionCreators/repository';
 jest.mock('../../actionCreators/repository.js');
 jest.mock('../../actionCreators/user.js');
 
+/** Mock the actionCreators used by the component to do nothing */
 userActionCreators.loadUser.mockImplementation(() => {
   return { type: 'mock_action' };
 });
-
 repositoryActionCreators.getRepositoriesForUser.mockImplementation(() => {
   return { type: 'mock_action' };
 });

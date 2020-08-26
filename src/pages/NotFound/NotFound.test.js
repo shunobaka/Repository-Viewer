@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines snapshot unit tests for NotFound page component.
+ */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import NotFound from './NotFound';

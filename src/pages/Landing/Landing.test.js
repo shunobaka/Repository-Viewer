@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines snapshot unit tests for Landing page component.
+ */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Landing from './Landing';
