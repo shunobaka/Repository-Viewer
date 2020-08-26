@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines unit test for alert actions.
+ */
 import { addAlert, removeAlert, clearAlerts } from './alert';
 import { ADD_ALERT, REMOVE_ALERT, CLEAR_ALERTS } from './types';
 

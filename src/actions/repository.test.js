@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines unit test for repository actions.
+ */
 import { repositoriesFiltered, repositoriesLoaded } from './repository';
 import { REPOSITORIES_FILTERED, REPOSITORIES_LOADED } from './types';
 

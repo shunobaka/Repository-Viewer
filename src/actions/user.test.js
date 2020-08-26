@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines unit test for user actions.
+ */
 import { userLoaded, usersLoaded } from './user';
 import { USER_LOADED, USERS_SEARCH_RESULT } from './types';
 
