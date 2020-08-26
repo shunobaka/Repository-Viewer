@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user snapshots multiple repositories user renders correctly 1`] = `
+Array [
+  <h2
+    className="text-center green-text"
+  >
+    Viewing repositories for 
+    shunobaka
+  </h2>,
+  <h4
+    className=" text-center green-text"
+  >
+    Click repository name to view details
+  </h4>,
+  <br />,
+  <div
+    className="container"
+  >
+    <div
+      className="justify-content-md-center row"
+    >
+      <div
+        className="col-lg-auto"
+      >
+        <h4
+          className="text-center green-text"
+        >
+          Filter repositories by name:
+        </h4>
+        <form
+          className="form-inline"
+          onSubmit={[Function]}
+        >
+          <input
+            className="mr-sm-2 ml-auto form-control"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn btn-outline-success mr-auto"
+            disabled={false}
+            type="submit"
+          >
+            Filter
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>,
+  <br />,
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-6 offset-lg-3"
+      >
+        <div
+          className="accordion"
+        >
+          <div
+            className="card"
+          >
+            <div
+              className="card-header"
+              onClick={[Function]}
+            >
+              1.  
+               
+              Test 1
+            </div>
+            <div
+              aria-expanded={null}
+              className="collapse"
+            >
+              <div
+                className="card-body"
+              >
+                <a
+                  href="TestUrl1"
+                >
+                  Go to repository
+                </a>
+                <br />
+                <br />
+                <h5>
+                  Description:
+                </h5>
+                <span>
+                  Description 1
+                </span>
+                <br />
+                <br />
+                <h5>
+                  Created on:
+                </h5>
+                <span>
+                  Invalid Date
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="card"
+          >
+            <div
+              className="card-header"
+              onClick={[Function]}
+            >
+              2.  
+               
+              Test 2
+            </div>
+            <div
+              aria-expanded={null}
+              className="collapse"
+            >
+              <div
+                className="card-body"
+              >
+                <a
+                  href="TestUrl2"
+                >
+                  Go to repository
+                </a>
+                <br />
+                <br />
+                <h5>
+                  Description:
+                </h5>
+                <span
+                  className="text-warning"
+                >
+                  This repository does not have a description
+                </span>
+                <br />
+                <br />
+                <h5>
+                  Created on:
+                </h5>
+                <span>
+                  Invalid Date
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`user snapshots no repository user renders correctly 1`] = `
+Array [
+  <h2
+    className="text-center green-text"
+  >
+    Viewing repositories for 
+    shunobaka
+  </h2>,
+  <div
+    className="text-center container"
+  >
+    <br />
+    <div
+      className="alert alert-warning"
+    >
+      User has no repositories!
+    </div>
+  </div>,
+]
+`;
+
+exports[`user snapshots no user renders correctly 1`] = `
+<h2
+  className="text-center"
+>
+  <div
+    className="spinner-border text-success"
+  />
+</h2>
+`;
+
+exports[`user snapshots single repository user renders correctly 1`] = `
+Array [
+  <h2
+    className="text-center green-text"
+  >
+    Viewing repositories for 
+    shunobaka
+  </h2>,
+  <h4
+    className=" text-center green-text"
+  >
+    Click repository name to view details
+  </h4>,
+  <br />,
+  <div
+    className="container"
+  >
+    <div
+      className="justify-content-md-center row"
+    >
+      <div
+        className="col-lg-auto"
+      >
+        <h4
+          className="text-center green-text"
+        >
+          Filter repositories by name:
+        </h4>
+        <form
+          className="form-inline"
+          onSubmit={[Function]}
+        >
+          <input
+            className="mr-sm-2 ml-auto form-control"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn btn-outline-success mr-auto"
+            disabled={false}
+            type="submit"
+          >
+            Filter
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>,
+  <br />,
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-6 offset-lg-3"
+      >
+        <div
+          className="accordion"
+        >
+          <div
+            className="card"
+          >
+            <div
+              className="card-header"
+              onClick={[Function]}
+            >
+              1.  
+               
+              Test 1
+            </div>
+            <div
+              aria-expanded={null}
+              className="collapse"
+            >
+              <div
+                className="card-body"
+              >
+                <a
+                  href="TestUrl1"
+                >
+                  Go to repository
+                </a>
+                <br />
+                <br />
+                <h5>
+                  Description:
+                </h5>
+                <span>
+                  Description 1
+                </span>
+                <br />
+                <br />
+                <h5>
+                  Created on:
+                </h5>
+                <span>
+                  Invalid Date
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
