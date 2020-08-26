@@ -26,7 +26,7 @@ describe('REPOSITORIES_LOADED type', () => {
     loading: true,
   };
 
-  it('loaded loads repositories', () => {
+  it('loads repositories', () => {
     const newState = repositoryReducer(initialState, { type, payload });
 
     expect(JSON.stringify(newState.repositories)).toEqual(
@@ -38,7 +38,7 @@ describe('REPOSITORIES_LOADED type', () => {
     expect(newState.loading).toEqual(false);
   });
 
-  it('loaded returns new object', () => {
+  it('returns new object', () => {
     const newState = repositoryReducer(initialState, { type, payload });
 
     expect(newState).not.toBe(initialState);
@@ -53,7 +53,7 @@ describe('REPOSITORIES_FILTERED type', () => {
     loading: true,
   };
 
-  it('filter removes all when none match', () => {
+  it('removes all when none match', () => {
     const newState = repositoryReducer(initialState, {
       type,
       payload: 'No repository name matches',
@@ -65,7 +65,7 @@ describe('REPOSITORIES_FILTERED type', () => {
     expect(newState.displayed_repositories.length).toBe(0);
   });
 
-  it('filter removes only ones that do not match', () => {
+  it('removes only ones that do not match', () => {
     const newState = repositoryReducer(initialState, {
       type,
       payload: mockReposTest[0].name,
@@ -77,7 +77,7 @@ describe('REPOSITORIES_FILTERED type', () => {
     expect(newState.displayed_repositories.length).toBe(mockReposTest.length);
   });
 
-  it('filter does not remove any when it is empty string', () => {
+  it('does not remove any when it is empty string', () => {
     const newState = repositoryReducer(initialState, {
       type,
       payload: '',
@@ -91,7 +91,7 @@ describe('REPOSITORIES_FILTERED type', () => {
     );
   });
 
-  it('filter does not modify repositories list', () => {
+  it('does not modify repositories list', () => {
     const repositoriesCopy = [...initialState.repositories];
     const newState = repositoryReducer(initialState, {
       type,
@@ -103,7 +103,7 @@ describe('REPOSITORIES_FILTERED type', () => {
     );
   });
 
-  it('filter works with empty displayed_repositories', () => {
+  it('works with empty displayed_repositories', () => {
     const state = { ...initialState, displayed_repositories: [] };
     const newState = repositoryReducer(state, {
       type,
@@ -115,7 +115,7 @@ describe('REPOSITORIES_FILTERED type', () => {
     );
   });
 
-  it('filter does not modify loading', () => {
+  it('does not modify loading', () => {
     const loadingTrue = true;
     const stateTrue = { ...initialState, loading: loadingTrue };
     const newStateTrue = repositoryReducer(stateTrue, {
@@ -135,7 +135,7 @@ describe('REPOSITORIES_FILTERED type', () => {
     expect(newStateFalse.loading).toBe(loadingFalse);
   });
 
-  it('filter returns new object', () => {
+  it('returns new object', () => {
     const newState = repositoryReducer(initialState, {
       type,
       payload: '',
@@ -152,7 +152,7 @@ describe('default case', () => {
     loading: true,
   };
 
-  it('default case returns same state', () => {
+  it('returns same state', () => {
     const initialStateCopy = { ...initialState };
     const newState = repositoryReducer(initialState, {
       type: 'INVALID_TYPE',

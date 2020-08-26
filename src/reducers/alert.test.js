@@ -17,13 +17,13 @@ describe('ADD_ALERT type', () => {
   const payload = mockAlerts[0];
   const initialState = [];
 
-  it('ADD_ALERT action type adds alert', () => {
+  it('adds alert', () => {
     const newState = alertReducer(initialState, { type, payload });
 
     expect(newState).toContain(payload);
   });
 
-  it('ADD_ALERT action type returns new object', () => {
+  it('returns new object', () => {
     const newState = alertReducer(initialState, { type, payload });
 
     expect(newState).not.toBe(initialState);
@@ -34,7 +34,7 @@ describe('REMOVE_ALERT type', () => {
   const type = REMOVE_ALERT;
   const initialState = mockAlerts;
 
-  it('REMOVE_ALERT action type removes correct alert', () => {
+  it('removes correct alert', () => {
     const newState = alertReducer(initialState, {
       type,
       payload: mockAlerts[0].id,
@@ -44,7 +44,7 @@ describe('REMOVE_ALERT type', () => {
     expect(newState).toContain(mockAlerts[1]);
   });
 
-  it('REMOVE_ALERT action type with no matching alert does nothing', () => {
+  it('does nothing when there is no matching alert', () => {
     const newState = alertReducer(initialState, {
       type,
       payload: -1,
@@ -55,7 +55,7 @@ describe('REMOVE_ALERT type', () => {
     expect(newState.length).toBe(initialState.length);
   });
 
-  it('REMOVE_ALERT action type returns new object', () => {
+  it('returns new object', () => {
     const newState = alertReducer(initialState, {
       type,
       payload: -1,
@@ -69,7 +69,7 @@ describe('CLEAR_ALERTS type', () => {
   const type = CLEAR_ALERTS;
   const initialState = mockAlerts;
 
-  it('CLEAR_ALERTS action type removes single alert', () => {
+  it('removes only alert', () => {
     const newState = alertReducer([mockAlerts[0]], {
       type,
     });
@@ -79,7 +79,7 @@ describe('CLEAR_ALERTS type', () => {
     expect(newState.length).toBe(0);
   });
 
-  it('CLEAR_ALERTS action type removes all alerts', () => {
+  it('removes all alerts', () => {
     const newState = alertReducer(initialState, {
       type,
     });
@@ -89,7 +89,7 @@ describe('CLEAR_ALERTS type', () => {
     expect(newState.length).toBe(0);
   });
 
-  it('CLEAR_ALERTS action type returns new object', () => {
+  it('returns new object', () => {
     const newState = alertReducer(initialState, {
       type,
     });
@@ -101,7 +101,7 @@ describe('CLEAR_ALERTS type', () => {
 describe('default case', () => {
   const initialState = mockAlerts;
 
-  it('default case returns same state', () => {
+  it('returns same state', () => {
     const initialStateCopy = [...initialState];
     const newState = alertReducer(initialState, {
       type: 'INVALID_TYPE',
