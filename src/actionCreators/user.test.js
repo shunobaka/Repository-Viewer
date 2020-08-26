@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Contains unit tests for the user actionCreater.
+ */
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -6,7 +9,9 @@ import githubApi from '../utils/githubApi';
 import userActionCreator from './user';
 import { USERS_SEARCH_FAIL, USER_LOAD_FAIL } from '../utils/alertMessages';
 
+/** Mock githubApi so it does not make actual http requests */
 jest.mock('../utils/githubApi.js');
+/** Mock uuid used by alerts as crypto is underfined during testing */
 jest.mock('../utils/uuid.js');
 
 /**

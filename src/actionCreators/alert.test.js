@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Contains unit tests for the alert actionCreater.
+ */
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -5,6 +8,7 @@ import combinedReducer from '../reducers';
 import alertActionCreator from './alert';
 import { ADD_ALERT } from '../actions/types';
 
+/** Mock uuid used by alerts as crypto is underfined during testing */
 jest.mock('../utils/uuid.js');
 
 const mockAlerts = [
@@ -18,6 +22,7 @@ const mockAlerts = [
   },
 ];
 
+/** Simple sleep function to test if alerts are removed when time expires */
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
@@ -105,34 +110,6 @@ try {
 
       expect(state.alert.length).toBe(0);
     });
-
-    // it('filters repositories correctly multiple results', () => {
-    //   const filterQuery = 'Test';
-
-    //   const expectedFilteredRepoState = [
-    //     ...expectedRepoState.filter((x) => x.name.includes(filterQuery)),
-    //   ];
-
-    //   repositoryActionCreator.filterRepositories(filterQuery)(store.dispatch);
-
-    //   state = store.getState();
-
-    //   expect(JSON.stringify(state.repository.displayed_repositories)).toEqual(
-    //     JSON.stringify(expectedFilteredRepoState)
-    //   );
-    // });
-
-    // it('filters repositories correctly no results', () => {
-    //   const filterQuery = 'shunobaka';
-
-    //   repositoryActionCreator.filterRepositories(filterQuery)(store.dispatch);
-
-    //   state = store.getState();
-
-    //   expect(JSON.stringify(state.repository.displayed_repositories)).toEqual(
-    //     JSON.stringify([])
-    //   );
-    // });
   });
 } catch (err) {
   console.log(
