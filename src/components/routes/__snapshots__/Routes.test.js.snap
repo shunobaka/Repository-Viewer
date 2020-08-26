@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`routes snapshots home route renders correctly 1`] = `
+<section
+  className="landing"
+>
+  <div
+    className="landing-inner"
+  >
+    <h1>
+      Welcome to Github-Repo-Viewer
+    </h1>
+    <h3>
+      Search for a user in the navigation above to view repositories.
+    </h3>
+  </div>
+</section>
+`;
+
+exports[`routes snapshots search route renders correctly 1`] = `
+Array [
+  <h2
+    className="text-center green-text"
+  >
+    Search results for 
+    
+    :
+  </h2>,
+  <div
+    className="text-center container"
+  >
+    <br />
+    <div
+      className="alert alert-warning"
+    >
+      No users found matching 
+      
+      !
+    </div>
+  </div>,
+]
+`;
+
+exports[`routes snapshots unknown route renders correctly 1`] = `
+<section
+  className="landing"
+>
+  <div
+    className="landing-inner"
+  >
+    <h1>
+      The requested page was not found.
+    </h1>
+    <h3>
+      Please try again.
+    </h3>
+  </div>
+</section>
+`;
+
+exports[`routes snapshots user route renders correctly 1`] = `
+Array [
+  <h2
+    className="text-center green-text"
+  >
+    Viewing repositories for 
+    Test
+  </h2>,
+  <div
+    className="text-center container"
+  >
+    <br />
+    <div
+      className="alert alert-warning"
+    >
+      User has no repositories!
+    </div>
+  </div>,
+]
+`;
