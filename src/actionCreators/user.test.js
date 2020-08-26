@@ -7,7 +7,10 @@ import thunk from 'redux-thunk';
 import combinedReducer from '../reducers';
 import githubApi from '../utils/githubApi';
 import userActionCreator from './user';
-import { USERS_SEARCH_FAIL, USER_LOAD_FAIL } from '../utils/alertMessages';
+import {
+  USERS_SEARCH_FAIL_MESSAGE,
+  USER_LOAD_FAIL_MESSAGE,
+} from '../utils/constants';
 
 /** Mock githubApi so it does not make actual http requests */
 jest.mock('../utils/githubApi.js');
@@ -69,7 +72,7 @@ try {
       state = store.getState();
 
       expect(state.alert.length).toBe(1);
-      expect(state.alert[0].message).toEqual(USER_LOAD_FAIL);
+      expect(state.alert[0].message).toEqual(USER_LOAD_FAIL_MESSAGE);
       expect(state.user.user).toBeNull();
       expect(githubApi.get).toBeCalledWith(`/users/${searchedUser}`);
     });
@@ -83,7 +86,7 @@ try {
       state = store.getState();
 
       expect(state.alert.length).toBe(1);
-      expect(state.alert[0].message).toEqual(USER_LOAD_FAIL);
+      expect(state.alert[0].message).toEqual(USER_LOAD_FAIL_MESSAGE);
       expect(state.user.user).toBeNull();
       expect(githubApi.get).toBeCalledWith(`/users/${searchedUser}`);
     });
@@ -145,7 +148,7 @@ try {
       state = store.getState();
 
       expect(state.alert.length).toBe(1);
-      expect(state.alert[0].message).toEqual(USERS_SEARCH_FAIL);
+      expect(state.alert[0].message).toEqual(USERS_SEARCH_FAIL_MESSAGE);
       expect(state.user.users.length).toBe(0);
       expect(githubApi.get).toBeCalledWith(`/users/${searchQuery}`);
     });
@@ -159,7 +162,7 @@ try {
       state = store.getState();
 
       expect(state.alert.length).toBe(1);
-      expect(state.alert[0].message).toEqual(USERS_SEARCH_FAIL);
+      expect(state.alert[0].message).toEqual(USERS_SEARCH_FAIL_MESSAGE);
       expect(state.user.users.length).toBe(0);
       expect(githubApi.get).toBeCalledWith(`/users/${searchQuery}`);
     });

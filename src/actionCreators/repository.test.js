@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import combinedReducer from '../reducers';
 import githubApi from '../utils/githubApi';
 import repositoryActionCreator from './repository';
-import { REPOSITORIES_LOAD_FAIL } from '../utils/alertMessages';
+import { REPOSITORIES_LOAD_FAIL_MESSAGE } from '../utils/constants';
 import { REPOSITORIES_LOADED } from '../actions/types';
 
 /** Mock githubApi so it does not make actual http requests */
@@ -94,7 +94,7 @@ try {
       state = store.getState();
 
       expect(state.alert.length).toBe(1);
-      expect(state.alert[0].message).toEqual(REPOSITORIES_LOAD_FAIL);
+      expect(state.alert[0].message).toEqual(REPOSITORIES_LOAD_FAIL_MESSAGE);
       expect(state.repository.repositories).toEqual([]);
       expect(state.repository.displayed_repositories).toEqual([]);
       expect(githubApi.get).toBeCalledWith(`/users/${loadedUser}/repos`);
@@ -111,7 +111,7 @@ try {
       state = store.getState();
 
       expect(state.alert.length).toBe(1);
-      expect(state.alert[0].message).toEqual(REPOSITORIES_LOAD_FAIL);
+      expect(state.alert[0].message).toEqual(REPOSITORIES_LOAD_FAIL_MESSAGE);
       expect(state.repository.repositories).toEqual([]);
       expect(state.repository.displayed_repositories).toEqual([]);
       expect(githubApi.get).toBeCalledWith(`/users/${loadedUser}/repos`);

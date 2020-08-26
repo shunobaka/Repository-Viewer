@@ -5,7 +5,10 @@
 import githubApi from '../utils/githubApi';
 import { setAlert } from '../actionCreators/alert';
 import { usersLoaded, userLoaded } from '../actions/user';
-import { USERS_SEARCH_FAIL, USER_LOAD_FAIL } from '../utils/alertMessages';
+import {
+  USERS_SEARCH_FAIL_MESSAGE,
+  USER_LOAD_FAIL_MESSAGE,
+} from '../utils/constants';
 
 /**
  * Loads information for users matching the username query using the github API.
@@ -24,7 +27,7 @@ const getUsers = (nameQuery) => async (dispatch) => {
 
     dispatch(usersLoaded(payload, nameQuery));
   } catch (err) {
-    dispatch(setAlert(USERS_SEARCH_FAIL, false));
+    dispatch(setAlert(USERS_SEARCH_FAIL_MESSAGE, false));
   }
 };
 
@@ -45,7 +48,7 @@ const loadUser = (username) => async (dispatch) => {
 
     dispatch(userLoaded(user));
   } catch (err) {
-    dispatch(setAlert(USER_LOAD_FAIL, false));
+    dispatch(setAlert(USER_LOAD_FAIL_MESSAGE, false));
   }
 };
 
