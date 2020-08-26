@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`repositoryItem snapshots repository renders correctly 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="card-header"
+    onClick={[Function]}
+  >
+    1.  
+     
+    Test
+  </div>
+  <div
+    aria-expanded={null}
+    className="collapse"
+  >
+    <div
+      className="card-body"
+    >
+      <a>
+        Go to repository
+      </a>
+      <br />
+      <br />
+      <h5>
+        Description:
+      </h5>
+      <span
+        className="text-warning"
+      >
+        This repository does not have a description
+      </span>
+      <br />
+      <br />
+      <h5>
+        Created on:
+      </h5>
+      <span>
+        Invalid Date
+      </span>
+    </div>
+  </div>
+</div>
+`;
