@@ -59,8 +59,12 @@ describe('REPOSITORIES_FILTERED type', () => {
       payload: 'No repository name matches',
     });
 
-    expect(newState.displayed_repositories).not.toContain(mockReposTest[0]);
-    expect(newState.displayed_repositories).not.toContain(mockReposTest[1]);
+    for (let index in mockReposTest) {
+      expect(newState.displayed_repositories).not.toContain(
+        mockReposTest[index]
+      );
+    }
+
     expect(newState.displayed_repositories).not.toContain(mockRepoName);
     expect(newState.displayed_repositories.length).toBe(0);
   });
@@ -71,8 +75,10 @@ describe('REPOSITORIES_FILTERED type', () => {
       payload: mockReposTest[0].name,
     });
 
-    expect(newState.displayed_repositories).toContain(mockReposTest[0]);
-    expect(newState.displayed_repositories).toContain(mockReposTest[1]);
+    for (let index in mockReposTest) {
+      expect(newState.displayed_repositories).toContain(mockReposTest[index]);
+    }
+
     expect(newState.displayed_repositories).not.toContain(mockRepoName);
     expect(newState.displayed_repositories.length).toBe(mockReposTest.length);
   });
@@ -83,8 +89,10 @@ describe('REPOSITORIES_FILTERED type', () => {
       payload: '',
     });
 
-    expect(newState.displayed_repositories).toContain(mockReposTest[0]);
-    expect(newState.displayed_repositories).toContain(mockReposTest[1]);
+    for (let index in mockReposTest) {
+      expect(newState.displayed_repositories).toContain(mockReposTest[index]);
+    }
+
     expect(newState.displayed_repositories).toContain(mockRepoName);
     expect(newState.displayed_repositories.length).toBe(
       newState.repositories.length

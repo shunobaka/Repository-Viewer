@@ -50,9 +50,11 @@ describe('REMOVE_ALERT type', () => {
       payload: -1,
     });
 
-    expect(newState).toContain(mockAlerts[0]);
-    expect(newState).toContain(mockAlerts[1]);
     expect(newState.length).toBe(initialState.length);
+
+    for (let index in mockAlerts) {
+      expect(newState).toContain(mockAlerts[index]);
+    }
   });
 
   it('returns new object', () => {
@@ -74,9 +76,11 @@ describe('CLEAR_ALERTS type', () => {
       type,
     });
 
-    expect(newState).not.toContain(mockAlerts[0]);
-    expect(newState).not.toContain(mockAlerts[1]);
     expect(newState.length).toBe(0);
+
+    for (let index in mockAlerts) {
+      expect(newState).not.toContain(mockAlerts[index]);
+    }
   });
 
   it('removes all alerts', () => {
@@ -84,9 +88,11 @@ describe('CLEAR_ALERTS type', () => {
       type,
     });
 
-    expect(newState).not.toContain(mockAlerts[0]);
-    expect(newState).not.toContain(mockAlerts[1]);
     expect(newState.length).toBe(0);
+
+    for (let index in mockAlerts) {
+      expect(newState).not.toContain(mockAlerts[index]);
+    }
   });
 
   it('returns new object', () => {
