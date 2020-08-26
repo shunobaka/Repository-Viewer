@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`alert snapshots no alerts renders correctly 1`] = `null`;
+
+exports[`alert snapshots single alert renders correctly 1`] = `
+<div
+  className="alert-container text-center"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="alert alert-danger"
+      role="alert"
+    >
+      Test
+    </div>
+  </div>
+</div>
+`;
