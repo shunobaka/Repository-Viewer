@@ -5,6 +5,7 @@
 import githubApi from '../utils/githubApi';
 import { setAlert } from '../actionCreators/alert';
 import { usersLoaded, userLoaded } from '../actions/user';
+import { USERS_SEARCH_FAIL, USER_LOAD_FAIL } from '../utils/alertMessages';
 
 /**
  * Loads information for users matching the username query using the github API.
@@ -23,12 +24,7 @@ const getUsers = (nameQuery) => async (dispatch) => {
 
     dispatch(usersLoaded(payload, nameQuery));
   } catch (err) {
-    dispatch(
-      setAlert(
-        'There was a problem searching for users, please try again.',
-        false
-      )
-    );
+    dispatch(setAlert(USERS_SEARCH_FAIL, false));
   }
 };
 
@@ -49,7 +45,7 @@ const loadUser = (username) => async (dispatch) => {
 
     dispatch(userLoaded(user));
   } catch (err) {
-    dispatch(setAlert('Could not retrieve user, please try again.', false));
+    dispatch(setAlert(USER_LOAD_FAIL, false));
   }
 };
 

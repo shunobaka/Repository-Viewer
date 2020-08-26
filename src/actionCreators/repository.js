@@ -8,6 +8,7 @@ import {
   repositoriesLoaded,
   repositoriesFiltered,
 } from '../actions/repository';
+import { REPOSITORIES_LOAD_FAIL } from '../utils/alertMessages';
 
 /**
  * Loads information for the user repositories using the github API.
@@ -27,12 +28,7 @@ const getRepositoriesForUser = (username) => async (dispatch) => {
 
     dispatch(repositoriesLoaded(payload));
   } catch (err) {
-    dispatch(
-      setAlert(
-        'There was a problem retrieving user repositories, please try again.',
-        false
-      )
-    );
+    dispatch(setAlert(REPOSITORIES_LOAD_FAIL, false));
   }
 };
 
