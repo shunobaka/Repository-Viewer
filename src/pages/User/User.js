@@ -19,7 +19,6 @@ import {
 
 import repositoryActionCreator from '../../actionCreators/repository';
 import userActionCreator from '../../actionCreators/user';
-import alertActionCreator from '../../actionCreators/alert';
 import Repositories from '../../components/user/Repositories';
 
 /**
@@ -32,21 +31,15 @@ const User = ({
   user,
   repositories,
   loading,
-  actions: {
-    getRepositoriesForUser,
-    filterRepositories,
-    loadUser,
-    removeAlerts,
-  },
+  actions: { getRepositoriesForUser, filterRepositories, loadUser },
   match,
 }) => {
   const [filterInput, setFilterInput] = useState('');
 
   useEffect(() => {
-    removeAlerts();
     loadUser(match.params.username);
     getRepositoriesForUser(match.params.username);
-  }, [removeAlerts, loadUser, getRepositoriesForUser, match.params.username]);
+  }, [loadUser, getRepositoriesForUser, match.params.username]);
 
   const onChange = (e) => {
     setFilterInput(e.target.value);
@@ -163,7 +156,6 @@ const mapDispatchToProps = (dispatch) => {
       {
         ...repositoryActionCreator,
         ...userActionCreator,
-        ...alertActionCreator,
       },
       dispatch
     ),

@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Container, Spinner } from 'react-bootstrap';
 
-import alertActionCreator from '../../actionCreators/alert';
 import userActionCreator from '../../actionCreators/user';
 import SearchResults from '../../components/search/SearchResults';
 
@@ -20,13 +19,12 @@ import SearchResults from '../../components/search/SearchResults';
  */
 const Search = ({
   user: { users, query, loading },
-  actions: { getUsers, removeAlerts },
+  actions: { getUsers },
   match,
 }) => {
   useEffect(() => {
-    removeAlerts();
     getUsers(match.params.query);
-  }, [removeAlerts, getUsers, match.params.query]);
+  }, [getUsers, match.params.query]);
 
   return (
     <Fragment>
@@ -83,10 +81,7 @@ const mapStateToProps = (state) => ({
  */
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators(
-      { ...alertActionCreator, ...userActionCreator },
-      dispatch
-    ),
+    actions: bindActionCreators(userActionCreator, dispatch),
   };
 };
 
