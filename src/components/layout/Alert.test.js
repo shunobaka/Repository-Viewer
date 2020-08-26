@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import renderer, { act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import Alert from './Alert';
@@ -14,9 +15,11 @@ describe('alert snapshots', () => {
   it('no alerts renders correctly', () => {
     const tree = renderer
       .create(
-        <Provider store={store}>
-          <Alert />
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <Alert />
+          </Provider>
+        </BrowserRouter>
       )
       .toJSON();
 
@@ -30,9 +33,11 @@ describe('alert snapshots', () => {
 
     const tree = renderer
       .create(
-        <Provider store={store}>
-          <Alert />
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <Alert />
+          </Provider>
+        </BrowserRouter>
       )
       .toJSON();
 

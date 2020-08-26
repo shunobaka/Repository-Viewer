@@ -9,6 +9,7 @@ import { repositoriesLoaded } from '../../actions/repository';
 import userActionCreators from '../../actionCreators/user';
 import repositoryActionCreators from '../../actionCreators/repository';
 
+/** Mock functions to prevent creating http requests */
 jest.mock('../../actionCreators/repository.js');
 jest.mock('../../actionCreators/user.js');
 
