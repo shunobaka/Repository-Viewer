@@ -1,6 +1,6 @@
-# RepositoryViewer
+# Github-Repository-Viewer
 
-Where you can search github users, view a list of their repositories and filter through them by name.
+Simple application for searching github users, viewing a list of their repositories and filtering through them by name.
 
 The application is developed with React in combination with Redux, which stores data retrieved from the official Github API and communicates it to the components.
 
