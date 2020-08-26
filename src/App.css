@@ -1,5 +1,6 @@
 body {
   background: url('./images/background.jpg');
+  word-wrap: break-word;
 }
 
 h2 {
@@ -8,6 +9,7 @@ h2 {
 
 .jumbotron {
   padding: 10px;
+  height: 90%;
 }
 
 .alert-container {
