@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines snapshot unit tests for RepositoryItem component.
+ */
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';

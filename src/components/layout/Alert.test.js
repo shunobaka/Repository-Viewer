@@ -1,7 +1,11 @@
+/**
+ * @fileoverview Defines snapshot unit tests for Alert component.
+ */
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import renderer, { act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
+
 import Alert from './Alert';
 import store from '../../store';
 import { addAlert } from '../../actions/alert';

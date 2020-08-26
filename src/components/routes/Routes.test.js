@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines snapshot unit tests for Routes component.
+ */
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
@@ -13,6 +16,7 @@ import repositoryActionCreators from '../../actionCreators/repository';
 jest.mock('../../actionCreators/repository.js');
 jest.mock('../../actionCreators/user.js');
 
+/** Mock the actionCreators used by the component to do nothing */
 userActionCreators.loadUser.mockImplementation(() => {
   return { type: 'mock_action' };
 });
