@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`landing snapshots landing page renders correctly 1`] = `
+<section
+  className="landing"
+>
+  <div
+    className="landing-inner"
+  >
+    <h1>
+      Welcome to Github-Repo-Viewer
+    </h1>
+    <h3>
+      Search for a user in the navigation above to view repositories.
+    </h3>
+  </div>
+</section>
+`;

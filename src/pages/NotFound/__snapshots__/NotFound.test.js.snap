@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`notFound snapshots notFound page renders correctly 1`] = `
+<section
+  className="landing"
+>
+  <div
+    className="landing-inner"
+  >
+    <h1>
+      The requested page was not found.
+    </h1>
+    <h3>
+      Please try again.
+    </h3>
+  </div>
+</section>
+`;
