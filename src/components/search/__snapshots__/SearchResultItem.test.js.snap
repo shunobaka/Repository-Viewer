@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`searchResultItem snapshots mock user renders correctly 1`] = `
+<div
+  className="col-md-3"
+>
+  <div
+    className="jumbotron"
+  >
+    <a
+      href="/user/Test"
+      onClick={[Function]}
+    >
+      <h4
+        className="text-center"
+      >
+        Test
+      </h4>
+      <img
+        className=""
+        width="100%"
+      />
+    </a>
+  </div>
+</div>
+`;
