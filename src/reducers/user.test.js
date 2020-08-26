@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines unit tests for user reducer.
+ */
 import userReducer from './user';
 import { USERS_SEARCH_RESULT, USER_LOADED } from '../actions/types';
 

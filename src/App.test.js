@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines snapshot unit tests for App component.
+ */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import App from './App';

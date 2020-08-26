@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines unit tests for alert reducer.
+ */
 import alertReducer from './alert';
 import { ADD_ALERT, REMOVE_ALERT, CLEAR_ALERTS } from '../actions/types';
 

@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Defines unit tests for repository reducer.
+ */
 import repositoryReducer from './repository';
 import { REPOSITORIES_FILTERED, REPOSITORIES_LOADED } from '../actions/types';
 
