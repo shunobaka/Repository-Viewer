@@ -4,9 +4,9 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import Repositories from './Repositories';
+import RepositoryList from './RepositoryList';
 
-describe('repositories snapshots', () => {
+describe('repositoryList snapshots', () => {
   const mockRepos = [
     {
       name: 'Test',
@@ -23,7 +23,7 @@ describe('repositories snapshots', () => {
     const tree = renderer
       .create(
         <BrowserRouter>
-          <Repositories repositories={mockRepos} />
+          <RepositoryList repositories={mockRepos} />
         </BrowserRouter>
       )
       .toJSON();
@@ -35,7 +35,7 @@ describe('repositories snapshots', () => {
     const tree = renderer
       .create(
         <BrowserRouter>
-          <Repositories repositories={[mockRepos[0]]} />
+          <RepositoryList repositories={[mockRepos[0]]} />
         </BrowserRouter>
       )
       .toJSON();
@@ -47,7 +47,7 @@ describe('repositories snapshots', () => {
     const tree = renderer
       .create(
         <BrowserRouter>
-          <Repositories repositories={[]} />
+          <RepositoryList repositories={[]} />
         </BrowserRouter>
       )
       .toJSON();

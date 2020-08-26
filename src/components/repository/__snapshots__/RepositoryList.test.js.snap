@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`repositories snapshots mutliple repositories renders correctly 1`] = `
+exports[`repositoryList snapshots mutliple repositories renders correctly 1`] = `
 <div
   className="container"
 >
@@ -101,7 +101,7 @@ exports[`repositories snapshots mutliple repositories renders correctly 1`] = `
 </div>
 `;
 
-exports[`repositories snapshots no repositories renders correctly 1`] = `
+exports[`repositoryList snapshots no repositories renders correctly 1`] = `
 <div
   className="container"
 >
@@ -121,7 +121,7 @@ exports[`repositories snapshots no repositories renders correctly 1`] = `
 </div>
 `;
 
-exports[`repositories snapshots single repository renders correctly 1`] = `
+exports[`repositoryList snapshots single repository renders correctly 1`] = `
 <div
   className="container"
 >

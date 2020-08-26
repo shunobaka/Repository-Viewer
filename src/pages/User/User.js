@@ -19,7 +19,7 @@ import {
 
 import repositoryActionCreator from '../../actionCreators/repository';
 import userActionCreator from '../../actionCreators/user';
-import Repositories from '../../components/user/Repositories';
+import RepositoryList from '../../components/repository/RepositoryList';
 
 /**
  * User react component that displays a page with filtering option and list of
@@ -86,7 +86,7 @@ const User = ({
               </Container>
               <br />
               {!loading ? (
-                <Repositories repositories={repositories} />
+                <RepositoryList repositories={repositories} />
               ) : (
                 <h2 className="text-center">
                   <Spinner animation="border" variant="success" />

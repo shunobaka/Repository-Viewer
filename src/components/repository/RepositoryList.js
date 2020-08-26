@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines a Repositories react component that renders a list of
+ * @fileoverview Defines a RepositoryList react component that renders a list of
  *    repositories.
  */
 import React from 'react';
@@ -9,10 +9,10 @@ import { Container, Row, Col, Accordion } from 'react-bootstrap';
 import RepositoryItem from './RepositoryItem';
 
 /**
- * Repositories react component that renders a list of repositories.
+ * RepositoryList react component that renders a list of repositories.
  * @param {object} props Contains the array of repositories to be displayed
  */
-const Repositories = ({ repositories }) => {
+const RepositoryList = ({ repositories }) => {
   return (
     <Container>
       <Row>
@@ -40,8 +40,8 @@ const Repositories = ({ repositories }) => {
   );
 };
 
-Repositories.propTypes = {
+RepositoryList.propTypes = {
   repositories: PropTypes.array.isRequired,
 };
 
-export default Repositories;
+export default RepositoryList;
